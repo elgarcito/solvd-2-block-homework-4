@@ -1,24 +1,5 @@
 
-In this progressive project, we are going to model a lab essay
- management database. 
-The structure of the databases
-
-Exercises 
-
-### 28/12/2023
-Create one XML file and XSD schema for at least 5 classes from the below hierarchy.
-Validate XML file using XSD schema and assigned parser.
-
-* xmlFiles and xsdFiles folders were adedd.It contains the followings xml files:
-  * xmlFiles: batchInfo.xml, employee.xml, equipmentForTestModel.xml, essayModule.xml, labTestReport.xml
-  * xsdFiles: batchInfo.xsd, employee.xsd, equipmentForTestModel.xsd, essayModule.xsd, labTestReport.xsd
-
-Parse XML file using one of the parsers from the title.
-
-* The SAX parser was used, there were created the five handlers to achieve this:
-* BatchInfoHandler.java, EmployeeHandler.java, EquipmentForTestModelHandler.java
-  EssayModuleHandler.java, LabTestReportHandler.java.
-* The implementation could be seen in the main method from lines 100 to 137 in myBatisBranch
+In this progressive project, we are going to model a lab essay management database.
 
 ### 26/12/2023
 Add MyBatis DAOs to the existing hierarchy with the same requirements. Choose any XML or interface mapping.
@@ -42,7 +23,6 @@ Switch service classes to MyBatis.
 In the Factory class now it's possible to access to each implementation myBatis or jdbc.
 Now the framework enum is configured in "myBatis"
 
-  This configuration was implemented in myBatisBranch
 
 ### 19/12/2023
 Build hierarchy for Schema from the below course.

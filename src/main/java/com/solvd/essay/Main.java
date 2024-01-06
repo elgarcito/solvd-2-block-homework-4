@@ -1,17 +1,8 @@
 package com.solvd.essay;
-
-
 import com.solvd.essay.domain.*;
 import com.solvd.essay.service.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.xml.sax.SAXException;
-
-import javax.xml.parsers.ParserConfigurationException;
-import javax.xml.parsers.SAXParser;
-import javax.xml.parsers.SAXParserFactory;
-import java.io.File;
-import java.io.IOException;
 import java.sql.Date;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -27,7 +18,7 @@ public class Main {
     private static final Logger LOGGER = LogManager.getLogger(Main.class);
 
     public static void main(String[] args) throws SQLException {
-/*
+
         //EssayModule class implementation and service creation
         EssayModuleService newEssayModuleService= new EssayModuleService();
 
@@ -283,45 +274,7 @@ public class Main {
         newEmployeeLaboratoryToolService.create(emlt1);
         newEmployeeLaboratoryToolService.deleteOne(4L);
 
- */
-        //Sax parse implementation
-        File file =new File("src/main/resources/xmlFiles/batchInfo.xml");
-        File file1=new File("src/main/resources/xmlFiles/equipmentForTestModel.xml");
-        File file2=new File("src/main/resources/xmlFiles/employee.xml");
-        File file3=new File("src/main/resources/xmlFiles/essayModule.xml");
-        File file4=new File("src/main/resources/xmlFiles/labTestReport.xml");
-        try {
-            SAXParserFactory saxParserFactory = SAXParserFactory.newInstance();
-            SAXParser parser =saxParserFactory.newSAXParser();
-            BatchInfoHandler handler=new BatchInfoHandler();
-            EquipmentForTestModelHandler handler1=new EquipmentForTestModelHandler();
-            EmployeeHandler handler2=new EmployeeHandler();
-            EssayModuleHandler handler3 =new EssayModuleHandler();
-            LabTestReportHandler handler4=new LabTestReportHandler();
-            parser.parse(file4,handler4);
-            parser.parse(file,handler);
-            parser.parse(file1,handler1);
-            parser.parse(file2,handler2);
-            parser.parse(file3,handler3);
 
-            BatchInfo batchInfo=handler.getBatchInfo();
-            EquipmentForTestModel equipmentForTestModel= handler1.getEquipmentForTestModel();
-            Employee employee=handler2.getEmployee();
-            EssayModule essayModule3= handler3.getEssayModule();
-
-            LabTestReport labTestReport= handler4.getLabTestReport();
-
-            LOGGER.info(batchInfo.toString());
-            LOGGER.info(equipmentForTestModel.toString());
-            LOGGER.info(employee.toString());
-            LOGGER.info(essayModule3.toString());
-
-
-            LOGGER.info(labTestReport.toString());
-
-        } catch (ParserConfigurationException | SAXException | IOException e) {
-            throw new RuntimeException(e);
-        }
 
     }
 }
